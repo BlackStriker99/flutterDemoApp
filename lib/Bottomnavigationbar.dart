@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Bottomnavigationbar extends StatefulWidget {
-
-
   @override
   _BottomnavigationbarState createState() => _BottomnavigationbarState();
 }
 
 class _BottomnavigationbarState extends State<Bottomnavigationbar> {
-
-
   int currentTabIndex = 0;
 
   void incrementIndex(index) {
@@ -18,47 +14,32 @@ class _BottomnavigationbarState extends State<Bottomnavigationbar> {
     });
   }
 
-
-
   List<Widget> tabs = [
-    Container(color:Colors.green),
-    Container(color:Colors.orange),
-    Container(color:Colors.blue),
-    Container(color:Colors.amberAccent),
-    Container(color:Colors.deepPurple)
+    Container(color: Colors.green),
+    Container(color: Colors.orange),
+    Container(color: Colors.blue),
+    Container(color: Colors.amberAccent),
+    Container(color: Colors.deepPurple)
   ];
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         title: Text('Bottomnavigation bar shifting'),
       ),
-
-
       body: tabs[currentTabIndex],
-
-
-
-
-
-
-
       bottomNavigationBar: BottomNavigationBar(
-
         type: BottomNavigationBarType.shifting,
         currentIndex: currentTabIndex,
         items: [
           BottomNavigationBarItem(
               backgroundColor: Colors.amberAccent,
               activeIcon: Icon(
-                Icons.airplanemode_inactive,semanticLabel: "text",
+                Icons.airplanemode_inactive,
+                semanticLabel: "text",
                 color: Colors.blueAccent,
               ),
-
               icon: Icon(
                 Icons.airplanemode_active,
                 color: Colors.white,

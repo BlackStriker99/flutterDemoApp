@@ -20,7 +20,7 @@ class _SliverappbarState extends State<Sliverappbar> {
               title: Row(
                 children: <Widget>[
                   FlutterLogo(
-                    colors: Colors.amber,
+                    textColor: Colors.amber,
                     size: 40,
                   ),
                   Text(

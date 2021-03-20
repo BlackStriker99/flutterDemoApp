@@ -1,4 +1,6 @@
+import 'package:demo2/screens/animated_container.dart';
 import 'package:flutter/material.dart';
+import 'package:toast/toast.dart';
 
 import 'Demos.dart';
 import 'FirstPage.dart';
@@ -27,13 +29,18 @@ class _HomeState extends State<Home> {
 
   void set_j() {
     setState(() {
-      j = int.parse(_inputController.text);
+      try {
+        j = int.parse(_inputController.text);
+      } catch (e) {
+        Toast.show("invalid number", context);
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: getDrawer(),
       appBar: AppBar(
         actions: <Widget>[
           IconButton(
@@ -80,132 +87,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            for (int i = 1; i <= 10; i++)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(j.toString()),
-                  Text("*"),
-                  Text(i.toString()),
-                  Text("="),
-                  Text((i * j).toString()),
-                ],
-              ),
-
-            /* Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("1"),
-                Text("="),
-                Text((a0).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("2"),
-                Text("="),
-                Text((a1).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("3"),
-                Text("="),
-                Text((a2).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("4"),
-                Text("="),
-                Text((a3).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("5"),
-                Text("="),
-                Text((a4).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("6"),
-                Text("="),
-                Text((a5).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("7"),
-                Text("="),
-                Text((a6).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("8"),
-                Text("="),
-                Text((a7).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("9"),
-                Text("="),
-                Text((a8).toString()),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(j.toString()),
-                Text("*"),
-                Text("10"),
-                Text("="),
-                Text((a9).toString()),
-              ],
-
-            ),*/
-
+            getTable(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -246,6 +128,45 @@ class _HomeState extends State<Home> {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => Demos()));
           }),
+    );
+  }
+
+  Widget getDrawer() {
+    return SafeArea(
+      child: Drawer(
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(" Animation Container"),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => AnimatedContainerScreen()));
+              },
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget getTable() {
+    List<Widget> widgets = [];
+    for (int i = 1; i <= 10; i++) {
+      widgets.add(Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(j.toString()),
+          Text("*"),
+          Text(i.toString()),
+          Text("="),
+          Text((i * j).toString()),
+        ],
+      ));
+    }
+
+    return Column(
+      children: widgets,
     );
   }
 }

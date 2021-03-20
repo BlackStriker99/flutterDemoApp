@@ -32,18 +32,23 @@ class _animatedcontainerState extends State<animatedcontainer> {
   }
 
   void animate() {
-
     setState(() {
       if (myColor == Colors.redAccent) {
         myColor = Colors.blueAccent;
         myWidth = 500;
         myHeight = 1000;
-        Toast.show("Changing to RedAccent", context,duration: Toast.LENGTH_SHORT,gravity: Toast.BOTTOM,backgroundColor: Colors.orangeAccent);
+        Toast.show("Changing to RedAccent", context,
+            duration: Toast.LENGTH_SHORT,
+            gravity: Toast.BOTTOM,
+            backgroundColor: Colors.orangeAccent);
       } else {
         myColor = Colors.redAccent;
         myWidth = 100.0;
         myHeight = 100.0;
-        Toast.show("Changing to BlueAccent", context,duration: Toast.LENGTH_SHORT,gravity: Toast.BOTTOM,backgroundColor: Colors.orangeAccent);
+        Toast.show("Changing to BlueAccent", context,
+            duration: Toast.LENGTH_SHORT,
+            gravity: Toast.BOTTOM,
+            backgroundColor: Colors.orangeAccent);
       }
     });
   }

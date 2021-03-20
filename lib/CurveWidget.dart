@@ -25,11 +25,11 @@ class CurveWidget extends StatelessWidget {
           ),
           body: ListView(
             children: <Widget>[
-              for (var i = 1; i < 100; i++)
-                ListTile(
-                  title: Center(child: Text("Test " + i.toString())),
-                  onTap: () {},
-                ),
+              // for (var i = 1; i < 100; i++)
+              //   ListTile(
+              //     title: Center(child: Text("Test " + i.toString())),
+              //     onTap: () {},
+              //   ),
             ],
           ),
         )

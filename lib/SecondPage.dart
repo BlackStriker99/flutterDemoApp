@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'TabView.dart';
+
 class SecondPage extends StatefulWidget {
   @override
   _SecondPageState createState() => _SecondPageState();
@@ -52,28 +53,31 @@ class _SecondPageState extends State<SecondPage> {
           ),
           new Expanded(
               child: new ListView.builder(
-                physics: FixedExtentScrollPhysics(),
+                  physics: FixedExtentScrollPhysics(),
                   itemCount: litems1.length,
                   itemBuilder: (BuildContext context, int Index) {
                     return new Text(litems1[Index]);
                   })),
           new Expanded(
             child: new ListView.builder(
-                  itemCount: litems2.length,
-                  itemBuilder: (BuildContext ctxt, int index) {
-                    return new Container(
-                      child: Column(
-                        children: <Widget>[
-                          Container(child: new Text(litems2[index]),color: Colors.blueAccent,),
-                          Container(child: new Text(litems2[index]),color: Colors.redAccent,),
-
-                        ],
-                      )
-                    );
-                  },
+              itemCount: litems2.length,
+              itemBuilder: (BuildContext ctxt, int index) {
+                return new Container(
+                    child: Column(
+                  children: <Widget>[
+                    Container(
+                      child: new Text(litems2[index]),
+                      color: Colors.blueAccent,
+                    ),
+                    Container(
+                      child: new Text(litems2[index]),
+                      color: Colors.redAccent,
+                    ),
+                  ],
+                ));
+              },
             ),
           ),
-         
         ],
       ),
     );

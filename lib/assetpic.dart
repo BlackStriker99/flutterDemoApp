@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class assetpic extends StatefulWidget {
   @override
   _assetpicState createState() => _assetpicState();

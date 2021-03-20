@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'constant/Constants.dart';
 
-
 class LoginPage extends StatelessWidget {
-
   final _pinCodeController = TextEditingController();
 
-
   @override
-  Widget build(BuildContext context)
-  {
+  Widget build(BuildContext context) {
     final logo = CircleAvatar(
       backgroundColor: Colors.transparent,
       radius: bigRadius,
@@ -23,22 +19,13 @@ class LoginPage extends StatelessWidget {
       maxLines: 1,
       //autofocus: true,
       decoration: InputDecoration(
-
           hintText: pinCodeHintText,
-         // contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+          // contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
 
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32.0),
           ),
-
-
-          hintStyle: TextStyle(
-              color: Colors.white
-          )
-
-
-      ),
-
+          hintStyle: TextStyle(color: Colors.white)),
 
       style: TextStyle(
         color: Colors.white,
@@ -54,7 +41,6 @@ class LoginPage extends StatelessWidget {
         onPressed: () {},
         padding: EdgeInsets.all(12),
         color: appGreyColor,
-
         child: Text(loginButtonText, style: TextStyle(color: Colors.white)),
       ),
     );

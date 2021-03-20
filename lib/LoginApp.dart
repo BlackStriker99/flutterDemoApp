@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'constant/Constants.dart';
 import 'LoginPage.dart';
 
-
-
 class LoginApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,5 +14,4 @@ class LoginApp extends StatelessWidget {
       home: LoginPage(),
     );
   }
-
 }

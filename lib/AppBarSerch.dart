@@ -11,7 +11,8 @@ class _AppBarSerchState extends State<AppBarSerch> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(centerTitle: true, title: appBarTitle, actions: <Widget>[
+      appBar:
+          new AppBar(centerTitle: true, title: appBarTitle, actions: <Widget>[
         new IconButton(
           icon: actionIcon,
           onPressed: () {

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'SecondPage.dart';
+
 import 'AppDrawer.dart';
+import 'SecondPage.dart';
 
 class FirstPage extends StatefulWidget {
   @override
   _FirstPageState createState() => _FirstPageState();
 }
 
-class _FirstPageState extends State<FirstPage>
-{
+class _FirstPageState extends State<FirstPage> {
   static const String routeName = '/firstpage';
   FocusNode textEditFocus;
 
@@ -16,7 +16,6 @@ class _FirstPageState extends State<FirstPage>
   void initState() {
     textEditFocus = FocusNode();
   }
-
 
   final _controllerUser = TextEditingController();
   final _controllerPwd = TextEditingController();
@@ -26,10 +25,10 @@ class _FirstPageState extends State<FirstPage>
   void set() {
     setState(() {
       text = _controllerUser.text;
-      Navigator.push(context, MaterialPageRoute(builder: (context) => SecondPage()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SecondPage()));
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -61,10 +60,8 @@ class _FirstPageState extends State<FirstPage>
               textScaleFactor: 2,
             ),
           ],
-         )
-        ),
+        )),
       ),
-
 
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -80,7 +77,7 @@ class _FirstPageState extends State<FirstPage>
                   padding: const EdgeInsets.fromLTRB(10, 25, 10, 25),
                   child: FlutterLogo(
                     size: 150,
-                    colors: Colors.orange,
+                    textColor: Colors.orange,
                   ),
                 ),
 
@@ -95,7 +92,7 @@ class _FirstPageState extends State<FirstPage>
                     keyboardType: TextInputType.text,
                     textCapitalization: TextCapitalization.words,
                     textAlign: TextAlign.justify,
-                    onSubmitted: (fn){
+                    onSubmitted: (fn) {
                       FocusScope.of(context).requestFocus(textEditFocus);
                     },
                     decoration: InputDecoration(
@@ -120,7 +117,7 @@ class _FirstPageState extends State<FirstPage>
                     style: TextStyle(color: Colors.black),
                     cursorColor: Colors.lightGreenAccent,
                     textInputAction: TextInputAction.done,
-                    onSubmitted: (fn){
+                    onSubmitted: (fn) {
                       set();
                     },
                     keyboardType: TextInputType.number,
@@ -158,10 +155,8 @@ class _FirstPageState extends State<FirstPage>
                     key: Key("textMsg"),
                   ),
                 ),
-
               ],
-             )
-            ),
+            )),
           ),
         ),
       ),

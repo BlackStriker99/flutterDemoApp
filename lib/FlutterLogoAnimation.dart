@@ -50,7 +50,7 @@ class _FlutterAnimationLogoState extends State<FlutterAnimationLogo>
               height: animation.value,
               width: animation.value,
               child: FlutterLogo(
-                colors: Colors.green,
+                textColor: Colors.green,
               ),
             ),
             MaterialButton(
